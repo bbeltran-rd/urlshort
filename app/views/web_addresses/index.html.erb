@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Web Addresses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Full address</th>
+      <th>Short address</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @web_addresses.each do |web_address| %>
+      <tr>
+        <td><%= web_address.title %></td>
+        <td><%= web_address.full_address %></td>
+        <td><%= web_address.short_address %></td>
+        <td><%= link_to 'Show', web_address %></td>
+        <td><%= link_to 'Edit', edit_web_address_path(web_address) %></td>
+        <td><%= link_to 'Destroy', web_address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Web Address', new_web_address_path %>
